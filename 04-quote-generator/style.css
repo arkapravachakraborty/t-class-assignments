@@ -1,0 +1,192 @@
+/* Import a clean, modern font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #121212;
+    /* Deep, pure dark gray */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e0e0e0;
+    /* Smooth fading when switching modes */
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+.container {
+    background: #1c1c1c;
+    /* Slightly elevated dark card */
+    width: 90%;
+    max-width: 500px;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+}
+
+#big-heading {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #ffffff;
+    /* Crisp white */
+    font-weight: 600;
+    transition: color 0.5s ease;
+}
+
+/* Button Styling (Monochrome) */
+#generate-button,
+#toggleBtn {
+    background: #ffffff;
+    color: #121212;
+    border: 2px solid #ffffff;
+    padding: 10px 24px;
+    margin: 5px;
+    /* Adds space between the buttons */
+    font-size: 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+/* Hollow out the button on hover for a sleek effect */
+#generate-button:hover,
+#toggleBtn:hover {
+    background: transparent;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+#generate-button:active,
+#toggleBtn:active {
+    transform: translateY(1px);
+}
+
+#generated-quotes-div {
+    margin-top: 35px;
+    padding: 30px 25px;
+    background: #252525;
+    border-radius: 12px;
+    border-left: 5px solid #ffffff;
+    /* Clean white accent line */
+    position: relative;
+    display: none;
+    animation: fadeIn 0.5s ease-out forwards;
+    transition: background 0.5s ease, border-color 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#quote-heading {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #aaaaaa;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    transition: color 0.5s ease;
+}
+
+#original-quote {
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 20px;
+    transition: color 0.5s ease;
+}
+
+/* Decorative quotation mark */
+#original-quote::before {
+    content: '\201C';
+    font-size: 40px;
+    color: #444444;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-family: serif;
+    transition: color 0.5s ease;
+}
+
+#author-name {
+    text-align: right;
+    font-weight: 600;
+    color: #888888;
+    font-size: 15px;
+    transition: color 0.5s ease;
+}
+
+/* =========================================
+   LIGHT MODE STYLES
+========================================= */
+
+body.light {
+    background: #f4f4f4;
+    /* Clean off-white */
+    color: #121212;
+}
+
+body.light .container {
+    background: #ffffff;
+    /* Pure white card */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    /* Much softer shadow */
+}
+
+body.light #big-heading {
+    color: #121212;
+}
+
+/* Invert buttons for light mode */
+body.light #generate-button,
+body.light #toggleBtn {
+    background: #121212;
+    color: #ffffff;
+    border: 2px solid #121212;
+}
+
+body.light #generate-button:hover,
+body.light #toggleBtn:hover {
+    background: transparent;
+    color: #121212;
+}
+
+body.light #generated-quotes-div {
+    background: #f9f9f9;
+    border-left: 5px solid #121212;
+    /* Black accent line */
+}
+
+body.light #quote-heading {
+    color: #666666;
+}
+
+body.light #original-quote {
+    color: #111111;
+}
+
+body.light #original-quote::before {
+    color: #cccccc;
+}
+
+body.light #author-name {
+    color: #555555;
+}
